@@ -1,0 +1,9 @@
+.nav ul {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+}
+
+.nav :global(.active) {
+  color: rgb(7, 173, 79);
+}
