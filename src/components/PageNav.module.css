@@ -1,9 +1,26 @@
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  align-items: center;
+}
 .nav ul {
   display: flex;
-  width: 600px;
+  align-items: center;
   justify-content: space-between;
+  width: 300px;
 }
 
-.nav :global(.active) {
-  color: rgb(7, 173, 79);
+.nav a {
+  color: inherit;
+}
+
+@media (max-width: 500px) {
+  .nav ul {
+    font-size: small;
+    width: 70%;
+  }
 }

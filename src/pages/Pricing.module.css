@@ -1,0 +1,65 @@
+.pricing {
+  background-color: var(--color-dark--0);
+}
+
+.pricing section {
+  line-height: 1.4;
+  text-align: center;
+  font-size: small;
+
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.pricing h1 {
+  margin: 1rem 0;
+}
+
+.pricing p {
+  color: var(--color-light--1);
+}
+
+.pricing :global(.img-box) {
+  width: 250px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.pricing img {
+  max-width: 100%;
+}
+
+@media (min-width: 500px) {
+  .pricing h1 {
+    font-size: 1.6rem;
+  }
+  .pricing p {
+    font-size: medium;
+  }
+  .pricing section {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 700px) {
+  .pricing section {
+    max-width: 100%;
+    text-align: left;
+  }
+  .pricing h1 {
+    font-size: 2rem;
+  }
+  .pricing p {
+    font-size: 1.4;
+    line-height: 1.6;
+  }
+}
+@media (min-width: 1000px) {
+  .pricing section {
+    margin-top: 6rem;
+    display: grid;
+    max-width: 80%;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}

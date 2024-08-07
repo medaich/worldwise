@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 :root {
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
@@ -9,3 +11,84 @@
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-light--2);
+  color: var(--color-light--2);
+}
+
+a,
+a:visited {
+  display: block;
+  text-decoration: none;
+
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3;
+}
+
+a.active,
+a:hover {
+  color: var(--color-brand--2);
+}
+
+.cta {
+  max-width: fit-content;
+  padding: 0.7rem;
+  color: var(--color-dark--0);
+  background-color: var(--color-brand--2);
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+}
+
+.cta:hover {
+  background-color: transparent;
+  border: 1px var(--color-brand--2) solid;
+}
+
+ul {
+  list-style: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+}
+
+#root {
+  height: 100%;
+  padding: 2rem;
+
+  margin: auto;
+}
+
+#root > * {
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 600px) {
+  #root > * {
+    padding: 3rem;
+  }
+}
+
+/* @media (min-width: 440px) {
+  #root {
+    max-width: 400px;
+  }
+}
+@media (min-width: 640px) {
+  #root {
+    max-width: 600px;
+  }
+}
+@media (min-width: 700px) {
+  #root {
+    max-width: 100%;
+  }
+}
+ */
