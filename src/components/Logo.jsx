@@ -5,7 +5,7 @@ function Logo({ isResponsive = false }) {
     return (
       <picture>
         <source media="(min-width:450px)" srcSet="/logo.png" />
-        <img className={styles.logo} src="/icon.png" alt="logo" />
+        <img className={styles.resLogo} src="/icon.png" alt="logo" />
       </picture>
     );
 
