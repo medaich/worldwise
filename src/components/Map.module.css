@@ -1,0 +1,7 @@
+.mapContainer {
+  height: 400px;
+  width: 100%;
+  border-radius: 0.3rem;
+
+  border: 1px saddlebrown solid;
+}

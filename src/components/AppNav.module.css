@@ -1,0 +1,26 @@
+.nav ul {
+  display: flex;
+  width: 200px;
+  margin-top: 2rem;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.nav ul a {
+  color: var(--color-light--2);
+  padding: 0.5rem 1rem;
+  background-color: var(--color-dark--1);
+  border-radius: 0.5rem;
+}
+
+.nav ul a:global(.active) {
+  background-color: var(--color-dark--2);
+  margin: 0 -0.4rem;
+  z-index: 2;
+}
+
+@media (min-width: 600px) {
+  .nav ul {
+    width: 260px;
+  }
+}

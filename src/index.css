@@ -1,15 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap";
 
 :root {
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
 
-  --color-dark--0: #242a2e;
-  --color-dark--1: #2d3439;
+  --color-dark--1: #242a2e;
+  --color-dark--0: #2d3439;
   --color-dark--2: #42484d;
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
+}
+
+button {
+  border: none;
+  background-color: unset;
+  color: inherit;
 }
 
 body {
@@ -22,13 +28,18 @@ a,
 a:visited {
   display: block;
   text-decoration: none;
+  color: inherit;
 
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3;
 }
 
 a.active,
 a:hover {
-  color: var(--color-brand--2);
+  color: inherit;
+}
+
+p {
+  line-height: 1.4;
 }
 
 .cta {
@@ -55,18 +66,18 @@ ul {
 }
 
 body {
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
 #root {
-  height: 100%;
   padding: 2rem;
-
-  margin: auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 #root > * {
-  height: 100%;
+  flex: 1;
   padding: 2rem 1rem;
 }
 

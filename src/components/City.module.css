@@ -1,0 +1,46 @@
+.city {
+  background-color: var(--color-dark--2);
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.city > * {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 100;
+}
+
+.city > p:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  & > span:first-child {
+    /*emoji*/
+    display: block;
+    font-size: 2rem;
+  }
+
+  & > span:nth-child(2) {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  & > span {
+    display: block;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  color: var(--color-light--1);
+  font-weight: 500;
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.city a.wiki {
+  text-transform: capitalize;
+  color: var(--color-brand--1);
+  text-decoration: underline;
+}

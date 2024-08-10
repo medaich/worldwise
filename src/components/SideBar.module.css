@@ -1,0 +1,10 @@
+.sidebar {
+  flex-flow: column nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar > * {
+  max-width: 100%;
+}

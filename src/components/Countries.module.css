@@ -1,0 +1,5 @@
+.countries {
+  display: grid;
+  grid-template-columns: repeat(2, calc((100% - 1rem) / 2));
+  gap: 1rem;
+}

@@ -1,0 +1,57 @@
+.city {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-dark--2);
+  margin-bottom: 1rem;
+  border-left: 0.5rem solid var(--color-brand--2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city * {
+  display: block;
+}
+
+.city > p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 60%;
+}
+
+.city > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.city p span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.city span:first-child {
+  font-size: 1.5rem;
+}
+
+.city time {
+  font-weight: 100;
+  font-size: small;
+}
+.city button {
+  background-color: var(--color-dark--0);
+  border-radius: 50%;
+  padding: 0 0.2rem;
+  font-size: large;
+  color: var(--color-light--0);
+  display: block;
+  text-align: center;
+}
+
+.city button:hover {
+  background-color: var(--color-brand--1);
+  color: var(--color-dark--1);
+}
