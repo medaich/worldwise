@@ -16,6 +16,7 @@ button {
   border: none;
   background-color: unset;
   color: inherit;
+  display: block;
 }
 
 body {
@@ -49,11 +50,11 @@ p {
   background-color: var(--color-brand--2);
   border-radius: 0.2rem;
   text-transform: uppercase;
-}
 
-.cta:hover {
-  background-color: transparent;
-  border: 1px var(--color-brand--2) solid;
+  &:hover {
+    background-color: var(--color-brand--1);
+    /* border: 1px var(--color-brand--2) solid; */
+  }
 }
 
 ul {

@@ -8,7 +8,7 @@ export function useGetCity(cityId) {
     data: city,
   } = useQuery({
     queryFn: () => getCity(cityId),
-    queryKey: ["city", cityId],
+    queryKey: ["currentCity", cityId],
     retry: false,
   });
 
