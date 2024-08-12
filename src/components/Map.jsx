@@ -39,7 +39,7 @@ function Map() {
       <MapContainer
         center={centerPosition}
         zoom={6}
-        style={{ width: "100%", height: "100%", borderRadius: ".3rem" }}
+        style={{ width: "100%", height: "100%", borderRadius: "inherit" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

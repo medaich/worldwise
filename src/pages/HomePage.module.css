@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+.home a:global(.cta) {
+  color: var(--color-dark--1);
+}
+
 @media (min-width: 600px) {
   .home section p {
     font-size: 1.5rem;
