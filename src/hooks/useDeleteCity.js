@@ -11,9 +11,11 @@ export function useDeleteCity() {
   } = useMutation({
     mutationFn: deleteCityApi,
 
-    onSuccess: queryClient.invalidateQueries({
-      queryKey: ["cities"],
-    }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["cities"],
+      });
+    },
   });
 
   return { deleteCity, isDeleting, error };

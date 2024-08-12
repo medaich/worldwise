@@ -56,4 +56,10 @@
       margin-right: 0.5rem;
     }
   }
+
+  & input:disabled,
+  & textarea:disabled {
+    background-color: var(--color-light--1);
+    color: var(--color-dark--2);
+  }
 }

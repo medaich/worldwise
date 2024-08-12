@@ -71,6 +71,8 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (!date || !cityName) return;
+
     const newCity = {
       cityName,
       country,
@@ -94,6 +96,7 @@ function Form() {
             id="name"
             value={cityName}
             onChange={(e) => setCityName(e.target.value)}
+            disabled={isPending}
           />
           <span>{emoji}</span>
         </div>
@@ -104,6 +107,7 @@ function Form() {
           id="date"
           selected={date}
           onChange={(date) => setDate(date)}
+          disabled={isPending}
         />
       </div>
       <div>
@@ -112,11 +116,14 @@ function Form() {
           id="notes"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
+          disabled={isPending}
         ></textarea>
       </div>
 
       <div>
-        <button className="cta">Add</button>
+        <button className="cta" disabled={isPending}>
+          Add
+        </button>
         <BackButton />
       </div>
     </form>

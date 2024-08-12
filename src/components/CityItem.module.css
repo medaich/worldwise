@@ -3,7 +3,9 @@
   border-radius: 0.5rem;
   background-color: var(--color-dark--2);
   margin-bottom: 1rem;
-  border-left: 0.5rem solid var(--color-brand--2);
+  border: solid var(--color-brand--2);
+  border-width: 0;
+  border-left-width: 0.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,4 +56,8 @@
 .city button:hover {
   background-color: var(--color-brand--1);
   color: var(--color-dark--1);
+}
+
+.city.current {
+  border-width: 2px 2px 2px 0.4rem;
 }

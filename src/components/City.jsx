@@ -1,21 +1,31 @@
 import styles from "./City.module.css";
 import { formatDate } from "../utils/helpers";
+
 import Spinner from "./Spinner";
 import Message from "./Message";
 
 import { useParams } from "react-router-dom";
 import { useGetCity } from "../hooks/useGetCity";
 import BackButton from "./BackButton";
+import { useCurrCity } from "../contexts/CurrCityContext";
+import { useEffect } from "react";
 
 function City() {
   const { id } = useParams();
+  const { setCurrId } = useCurrCity();
 
   const { error, isLoading, city } = useGetCity(id);
+
+  useEffect(
+    function () {
+      setCurrId(id);
+    },
+    [id, setCurrId]
+  );
 
   if (isLoading) return <Spinner />;
 
   if (error) return <Message message={error.message} />;
-
   const { cityName, date, emoji, notes } = city;
   const wikiUrl = `https://en.wikipedia.org/wiki/${cityName.replace(" ", "_")}`;
 
