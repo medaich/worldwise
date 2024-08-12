@@ -105,6 +105,7 @@ function Form() {
         <label htmlFor="date">When did you go to {cityName}?</label>
         <DatePicker
           id="date"
+          dateFormat={"dd/MM/YYYY"}
           selected={date}
           onChange={(date) => setDate(date)}
           disabled={isPending}
