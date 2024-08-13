@@ -2,6 +2,7 @@
   height: 400px;
   width: 100%;
   border-radius: 0.3rem;
+  position: relative;
 
   border: 1px saddlebrown solid;
 
@@ -23,6 +24,17 @@
     & span:first-child {
       font-size: 1.3rem;
     }
+  }
+
+  & button:global(.cta) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    z-index: 9999;
+    font-weight: 600;
+    font-size: 0.7rem;
   }
 }
 

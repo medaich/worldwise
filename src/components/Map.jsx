@@ -11,12 +11,15 @@ import {
 } from "react-leaflet";
 import { useUrlCityPosition } from "../hooks/useUrlCityPosition";
 import { useNavigate } from "react-router-dom";
+import { useGeolocation } from "../hooks/useGeolocation";
 
 function Map() {
   const { cities } = useCities();
   const [centerPosition, setCenterPosition] = useState([51.505, -0.09]);
 
   const [lat, lng] = useUrlCityPosition();
+
+  const { isLoading, position, error, getPosition } = useGeolocation();
 
   const navigate = useNavigate();
 
@@ -29,9 +32,21 @@ function Map() {
     [lat, lng]
   );
 
+  useEffect(
+    function () {
+      if (!position) return;
+      setCenterPosition([position.lat, position.lng]);
+    },
+    [position]
+  );
+
   function handleMapClick(latlng) {
     setCenterPosition([latlng.lat, latlng.lng]);
     navigate(`/app/form?lat=${latlng.lat}&lng=${latlng.lng}`);
+  }
+
+  function handleUseGeolocation() {
+    getPosition();
   }
 
   return (
@@ -61,6 +76,9 @@ function Map() {
         <Recenter pos={centerPosition} />
         <DetectClick onMapClick={handleMapClick} />
       </MapContainer>
+      <button className="cta" onClick={handleUseGeolocation}>
+        {!error ? (!isLoading ? "Use your position" : "loading...") : error}
+      </button>
     </div>
   );
 }
