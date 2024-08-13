@@ -90,7 +90,7 @@ body {
 }
 
 @media (min-width: 1000px) {
-  #root > *:not(#pricing) {
+  #root > #app {
     padding: 0;
   }
 }

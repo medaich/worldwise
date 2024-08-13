@@ -7,7 +7,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
-    <main className={styles.app}>
+    <main className={styles.app} id="app">
       <SideBar>
         <Link to="/">
           <Logo />

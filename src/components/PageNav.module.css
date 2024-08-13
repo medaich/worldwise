@@ -18,6 +18,10 @@
   color: inherit;
 }
 
+.nav a:not(.noHover):global(.active) {
+  color: var(--color-brand--2);
+}
+
 @media (max-width: 500px) {
   .nav ul {
     font-size: small;

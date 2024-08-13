@@ -16,8 +16,10 @@ function PageNav() {
           <NavLink to="/product">product</NavLink>
         </li>
 
-        <li className="cta">
-          <NavLink to="/login">login</NavLink>
+        <li>
+          <NavLink className={`${styles.noHover} cta`} to="/login">
+            login
+          </NavLink>
         </li>
       </ul>
     </nav>

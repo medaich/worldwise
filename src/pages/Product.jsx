@@ -4,7 +4,7 @@ import PageNav from "../components/PageNav";
 
 function Pricing() {
   return (
-    <main className={styles.pricing} id="pricing">
+    <main className={styles.pricing}>
       <PageNav />
       <section>
         <div className="content">
