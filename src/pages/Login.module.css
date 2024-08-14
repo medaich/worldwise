@@ -1,0 +1,48 @@
+.login {
+  background-color: var(--color-dark--0);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 4rem;
+
+  & > form {
+    padding: 2rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color-dark--2);
+
+    & > * {
+      display: block;
+      width: 100%;
+    }
+
+    & > input {
+      padding: 0.5rem;
+      border-radius: 0.3rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    & button {
+      font-weight: 500;
+    }
+
+    & > div:last-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > div {
+        font-style: italic;
+        font-size: small;
+
+        & > a {
+          color: var(--color-brand--2);
+          text-transform: capitalize;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -50,6 +50,7 @@ p {
   background-color: var(--color-brand--2);
   border-radius: 0.2rem;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 
   &:hover {
     background-color: var(--color-brand--1);
@@ -59,6 +60,19 @@ p {
 ul {
   list-style: none;
 }
+
+input,
+textarea {
+  border: 1px var(--color-light--1) solid;
+  outline: none;
+  background-color: transparent;
+
+  &:focus {
+    border-color: var(--color-brand--1);
+    box-shadow: 0 0 0 1px var(--color-brand--1);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

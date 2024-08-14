@@ -25,15 +25,8 @@
     font-size: 1rem;
     background-color: transparent;
     color: var(--color-light--2);
-    border: 1px var(--color-light--1) solid;
     font-weight: 200;
-    outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-    &:focus {
-      border-color: var(--color-brand--1);
-      box-shadow: 0 0 0 1px var(--color-brand--1);
-    }
   }
 
   & > div:last-child {
