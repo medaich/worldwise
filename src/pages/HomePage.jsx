@@ -18,7 +18,7 @@ function HomePage() {
         </p>
       </section>
       <div className={styles.center}>
-        <Link to="/app" className="cta">
+        <Link to="/login" className="cta">
           Start tracking now
         </Link>
       </div>

@@ -24,7 +24,6 @@
     width: 100%;
     font-size: 1rem;
     background-color: transparent;
-    color: var(--color-light--2);
     font-weight: 200;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
@@ -48,11 +47,5 @@
       font-size: 2rem;
       margin-right: 0.5rem;
     }
-  }
-
-  & input:disabled,
-  & textarea:disabled {
-    background-color: var(--color-light--1);
-    color: var(--color-dark--2);
   }
 }

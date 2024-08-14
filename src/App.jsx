@@ -13,36 +13,42 @@ import Countries from "./components/Countries";
 import City from "./components/City";
 import Form from "./components/Form";
 import CurrentCityProvider from "./contexts/CurrCityContext";
+import AuthProvider from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="product" element={<Product />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route
-            path="app"
-            element={
-              <CurrentCityProvider>
-                <AppLayout />
-              </CurrentCityProvider>
-            }
-          >
-            <Route index element={<Navigate to="cities" replace />} />
-            <Route path="cities" element={<Cities />} />
-            <Route path="countries" element={<Countries />} />
-            <Route path="form" element={<Form />} />
-            <Route path="cities/:id" element={<City />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path="product" element={<Product />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+            <Route
+              path="app"
+              element={
+                <ProtectedRoute>
+                  <CurrentCityProvider>
+                    <AppLayout />
+                  </CurrentCityProvider>
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Navigate to="cities" replace />} />
+              <Route path="cities" element={<Cities />} />
+              <Route path="countries" element={<Countries />} />
+              <Route path="form" element={<Form />} />
+              <Route path="cities/:id" element={<City />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
 
       {process.env.NODE_ENV === "development" && (
         <div style={{ position: "fixed", bottom: 0, right: 0, zIndex: 9999 }}>

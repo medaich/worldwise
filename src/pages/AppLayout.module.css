@@ -1,6 +1,7 @@
 .app {
   background-color: var(--color-dark--0);
   padding: 1rem;
+  position: relative;
 }
 
 .app > * {
