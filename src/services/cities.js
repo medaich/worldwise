@@ -9,9 +9,9 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 
-export async function getCities() {
+export async function getCities(uid) {
   try {
-    const querySnapshot = await getDocs(collection(db, "cities"));
+    const querySnapshot = await getDocs(collection(db, "users", uid, "cities"));
 
     const cities = querySnapshot.docs.map((doc) => {
       const docData = doc.data();
@@ -25,9 +25,9 @@ export async function getCities() {
   }
 }
 
-export async function getCity(id) {
+export async function getCity(uid, id) {
   try {
-    const docRef = doc(db, "cities", id);
+    const docRef = doc(db, "users", uid, "cities", id);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -50,11 +50,14 @@ export async function getCity(id) {
   }
 }
 
-export async function addCity(newCity) {
+export async function addCity(uid, newCity) {
   try {
     const date = Timestamp.fromDate(newCity.date);
     const cityData = { ...newCity, date };
-    const docRef = await addDoc(collection(db, "cities"), cityData);
+    const docRef = await addDoc(
+      collection(db, "users", uid, "cities"),
+      cityData
+    );
 
     return { id: docRef.id, ...cityData };
   } catch (error) {
@@ -63,9 +66,9 @@ export async function addCity(newCity) {
   }
 }
 
-export async function deleteCity(cityId) {
+export async function deleteCity(uid, cityId) {
   try {
-    await deleteDoc(doc(db, "cities", cityId));
+    await deleteDoc(doc(db, "users", uid, "cities", cityId));
   } catch (error) {
     console.log(error);
     throw new Error("Couldn't delete city.");
