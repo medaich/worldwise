@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import Footer from "./Footer";
 
 const IS_NOT_CONFIRMED_MSG = "passwords must match";
 
@@ -120,6 +121,7 @@ function Signup() {
           <p className="error">error</p>
         )}
       </form>
+      <Footer />
     </main>
   );
 }

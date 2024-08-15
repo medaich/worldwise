@@ -1,0 +1,17 @@
+.footer {
+  font-size: 0.8rem;
+  font-weight: 100;
+  font-style: italic;
+
+  & span {
+    color: var(--color-brand--1);
+  }
+
+  & p {
+    margin-bottom: 0.8rem;
+  }
+
+  & p:last-of-type {
+    text-align: center;
+  }
+}
